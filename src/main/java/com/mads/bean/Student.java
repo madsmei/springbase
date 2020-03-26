@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Student {
 
-    private String username = "jack";
+    private String username = "mads";
 
     private String password = "123";
 
