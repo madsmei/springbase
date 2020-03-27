@@ -43,7 +43,10 @@ public class InitClassAfter implements InitializingBean {
 
     /******
      * 此注解的作用 和实现InitializingBean接口并实现上面方法的是一模一样的，
-     *  唯一的区别是    使用该注解的方法比上面的方式要提前那么一点
+     *  区别：
+     *      1.使用该注解的方法比上面的方式要提前那么一点
+     *      2.代码侵入性比上面的方式要低
+     *      3.不是spring源码提供的
      */
     @PostConstruct
     public void afterPropertiesSetByPostConstruct() {

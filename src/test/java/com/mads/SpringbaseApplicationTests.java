@@ -28,4 +28,30 @@ public class SpringbaseApplicationTests {
         System.out.println("-4-->"+applicationContext.getBean(Account.class));
     }
 
+    @Test
+    public void test3() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.mads");
+
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            new Thread(()->{
+
+                if (finalI % 2 == 0) {
+                    System.out.println(Thread.currentThread().getName() + "-->" + applicationContext.getBean("scopeBean"));
+                    System.out.println(Thread.currentThread().getName() + "-->" + applicationContext.getBean("scopeBean"));
+                } else {
+                    System.out.println(Thread.currentThread().getName() + "-->" + applicationContext.getBean("scopeBean"));
+                }
+
+            }).start();
+        }
+
+        try {
+            //阻塞主线程，不然你懂的，noting
+            Thread.currentThread().join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.mads.initclass;
 
+import com.mads.annotation.MyComponent;
 import com.mads.bean.Lannister;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
+import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
+import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,6 +23,8 @@ import org.springframework.stereotype.Component;
  *    1.资源的加载
  *    2.核心参数的生成
  *    3.数据预热
+ * 注意：
+ *    1.一个类对应一个BeanDefinition，一对一关系
  * @Date 2020/3/27
  * @Version V1.0
  * @Author
@@ -53,10 +58,19 @@ public class BeanDefinitionDemo implements BeanDefinitionRegistryPostProcessor {
                 beanDefinitionRegistry.registerBeanDefinition("lannister", genericBeanDefinition);
             }
         }
+
+
+        /*
+         * 自定义扫描器, 扫描使用了我们自定义注解的bean，装载成 BeanDefinition对象，所以一直强调。BeanDefinition是一切的基础
+         * */
+        ClassPathBeanDefinitionScanner classPathBeanDefinitionScanner = new ClassPathBeanDefinitionScanner(beanDefinitionRegistry);
+        classPathBeanDefinitionScanner.addIncludeFilter(new AnnotationTypeFilter(MyComponent.class));
+        classPathBeanDefinitionScanner.scan("com.mads");
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-
+        /****将我们的 {@link com.mads.bean.ScopeBean} 交给我们自己自定义管理****/
+        configurableListableBeanFactory.registerScope("madsScope", new CustomScope());
     }
 }
