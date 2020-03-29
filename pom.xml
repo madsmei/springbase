@@ -35,7 +35,27 @@
                 </dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
@@ -70,6 +90,93 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jasper</artifactId>
             <version>8.5.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.37</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.41</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>org.mybatis.spring.boot</groupId>
+                    <artifactId>mybatis-spring-boot-starter</artifactId>
+                    <version>RELEASE</version>
+                </dependency>-->
+
+        <!--
+         提供jackson核心支持
+       -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.8.9</version>
+        </dependency>
+        <!-- Jackson注解-->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <!--
+          Jackson数据绑定包使用的核心注释，用于值类型。该包提供Json注解支持
+        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+        <!--Jackson数据绑定-->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <!--
+          对象序列化支持
+        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>mchange-commons-java</artifactId>
+            <version>0.2.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.6.2.RELEASE</version>
         </dependency>
     </dependencies>
 

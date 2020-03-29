@@ -12,6 +12,7 @@ import java.io.File;
 
 /******
  * 通过 嵌入式tomcat 来模拟Springboot启动项目
+ * 这个项目 本身是个SpringMVC项目，没有SpringBoot的。。
  */
 public class SpringApplication {
 

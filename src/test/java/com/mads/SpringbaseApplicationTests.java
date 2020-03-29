@@ -2,16 +2,18 @@ package com.mads;
 
 import com.mads.bean.Account;
 import com.mads.bean.Lannister;
-import com.mads.bean.Student;
+import com.mads.entity.ConsultConfigArea;
 import com.mads.initclass.InitClassAfter;
+import com.mads.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /*****
  * 使用AnnotationConfigApplicationContext可以实现基于Java的配置类（包括各种注解）加载Spring的应用上下文
  */
+@Slf4j
 public class SpringbaseApplicationTests {
-
 
     @Test
     public void test2() {
@@ -54,4 +56,19 @@ public class SpringbaseApplicationTests {
         }
     }
 
+    /*****
+     * 测试 插入数据库
+     */
+    @Test
+    public void test4() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.mads");
+        UserService bean = applicationContext.getBean(UserService.class);
+
+        ConsultConfigArea area = new ConsultConfigArea();
+        area.setAreaCode("HB");
+        area.setAreaName("HB");
+        area.setState("1");
+        String cacheResult = bean.addArea(area);
+        log.info(Thread.currentThread().getName() + "========" + cacheResult);
+    }
 }
