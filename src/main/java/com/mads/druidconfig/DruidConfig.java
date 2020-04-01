@@ -98,6 +98,7 @@ public class DruidConfig {
         targetDataSources.put("ds1",ds1);
         targetDataSources.put("ds2",ds2);
 
+        //将两个数据源放入到 多数据源的类中，让Spring帮我们保管
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         dynamicDataSource.setTargetDataSources(targetDataSources);
         dynamicDataSource.setDefaultTargetDataSource(ds1);

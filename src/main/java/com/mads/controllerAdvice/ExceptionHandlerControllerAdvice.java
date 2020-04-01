@@ -3,6 +3,7 @@ package com.mads.controllerAdvice;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Description: controller的全局异常拦截,只拦截.mads包下的，

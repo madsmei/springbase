@@ -32,6 +32,7 @@ public class InitClassAfter implements InitializingBean {
      *          1.做资源加载
      *          2.做日志打印
      *          3.做xml解析
+     *          4.配置文件的加载
      * */
     @Override
     public void afterPropertiesSet() throws Exception {

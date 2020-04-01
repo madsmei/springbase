@@ -32,13 +32,21 @@ public class UserInterceptor implements HandlerInterceptor {
         return true;
     }
 
+    /*****
+     * 中置拦截器，当Controller 方法执行完以后才调用，可以多view进行一些处理
+     * @param request
+     * @param response
+     * @param handler
+     * @param modelAndView
+     * @throws Exception
+     */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         System.out.println("===========UserInterceptor.postHandle==========");
     }
 
     /*****
-     * 后置烂机器
+     * 后置拦截器， 比如释放资源。。
      * @param request
      * @param response
      * @param handler

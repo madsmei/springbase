@@ -7,6 +7,7 @@ package com.mads.druidconfig;
 * */
 public class DynamicDataSourceHolder {
 
+    //用来存放数据源的key
     private static ThreadLocal<String> local = new ThreadLocal<>();
 
     public static String getDs() {

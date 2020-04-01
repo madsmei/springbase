@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
  * @Description: 多数据源 用于处理链接字符串的AOP
  * 相关三个类 {@link TargetSource,com.mads.druidconfig.DynamicDataSource,DynamicDataSourceHolder}
  * 测试类在 {@link com.mads.service.UserServiceImpl#queryUser(String)}
+ *
+ * 使用AOP 也可以是实现  分库分表逻辑，但是要考虑分布式事务的问题
  * @Date 2020/3/28
  * @Version V1.0
  * @Author Mads

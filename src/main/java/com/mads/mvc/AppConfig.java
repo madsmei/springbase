@@ -29,7 +29,7 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
     private UserInterceptor userInterceptor;
 
     /****
-     * 将我们的自定义拦截器 加入到 Spring
+     * 将我们的自定义拦截器 加入到 Spring,如果有多个拦截器。那就在调用 addInterceptor（）加就可以了
      * @param registry
      */
     @Override
@@ -37,5 +37,6 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
         registry.addInterceptor(userInterceptor)
                 .addPathPatterns("")//需要拦截的路径
                 .excludePathPatterns("");//不需要拦截的路径
+
     }
 }

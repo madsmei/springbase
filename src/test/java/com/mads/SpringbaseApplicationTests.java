@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 /*****
  * 使用AnnotationConfigApplicationContext可以实现基于Java的配置类（包括各种注解）加载Spring的应用上下文
+ * 调用里面的 refresh（）方法 启动Spring容器，spring一切的启点，，
  */
 @Slf4j
 public class SpringbaseApplicationTests {
@@ -69,6 +70,7 @@ public class SpringbaseApplicationTests {
         area.setAreaName("HB");
         area.setState("1");
         String cacheResult = bean.addArea(area);
-        log.info(Thread.currentThread().getName() + "========" + cacheResult);
+
+//        log.info(Thread.currentThread().getName() + "========" + cacheResult);
     }
 }
