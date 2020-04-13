@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
  *
  * 如果是多个拦截器，可是配置@Order注解调整他们的优先级，控制执行顺序
  */
-@Order(1)
 @Component
 public class UserInterceptor implements HandlerInterceptor {
 

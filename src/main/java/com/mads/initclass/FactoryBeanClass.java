@@ -3,6 +3,7 @@ package com.mads.initclass;
 import com.mads.bean.Student;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.support.TransactionTemplate;
 
 /**
  * @Description:
@@ -19,12 +20,14 @@ import org.springframework.stereotype.Component;
  * @Version V1.0
  * @Author Mads
  **/
-@Component("factoryBeanClass")
+//@Component("factoryBeanClass")
 public class FactoryBeanClass implements FactoryBean {
 
     /*****
-     * 返回一个对象实例
-     * 例如当上下文获取bean实例时，spring就会调用此方法返回一个对象实例
+     * 返回一个对象代理实例，
+     *
+     * 注意：通过源码发现，在Spring调用此方法之前，已经完成了该类的初始化，也放入了一级缓存。
+     * 使用到了 装饰者模式
      * @return
      * @throws Exception
      */
@@ -33,6 +36,8 @@ public class FactoryBeanClass implements FactoryBean {
         Student student = new Student();
         student.setUsername("提利昂·兰尼斯特");
         student.setPassword("听我怒吼");
+
+
         return student;
     }
 

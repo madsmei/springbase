@@ -63,9 +63,9 @@ public class BeanDefinitionDemo implements BeanDefinitionRegistryPostProcessor {
         /*
          * 自定义扫描器, 扫描使用了我们自定义注解的bean，装载成 BeanDefinition对象，所以一直强调。BeanDefinition是一切的基础
          * */
-        ClassPathBeanDefinitionScanner classPathBeanDefinitionScanner = new ClassPathBeanDefinitionScanner(beanDefinitionRegistry);
-        classPathBeanDefinitionScanner.addIncludeFilter(new AnnotationTypeFilter(MyComponent.class));
-        classPathBeanDefinitionScanner.scan("com.mads");
+//        ClassPathBeanDefinitionScanner classPathBeanDefinitionScanner = new ClassPathBeanDefinitionScanner(beanDefinitionRegistry);
+//        classPathBeanDefinitionScanner.addIncludeFilter(new AnnotationTypeFilter(MyComponent.class));
+//        classPathBeanDefinitionScanner.scan("com.mads");
     }
 
     @Override

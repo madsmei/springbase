@@ -1,5 +1,6 @@
 package com.mads.initclass;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import javax.annotation.PostConstruct;
  * @Author Mads
  **/
 @Component
-public class InitClassAfter implements InitializingBean {
+public class InitClassAfter implements InitializingBean, DisposableBean {
 
     private int a = 1;
     private int b = 1;
@@ -52,5 +53,14 @@ public class InitClassAfter implements InitializingBean {
     @PostConstruct
     public void afterPropertiesSetByPostConstruct() {
         System.out.println("----在InitClassAfter类实例化完成后调用了afterPropertiesSetByPostConstruct方法------");
+    }
+
+    /*****
+     * bean销毁，此方法会在源码中，初始化时在放入一级缓存之前自动加上
+     * @throws Exception
+     */
+    @Override
+    public void destroy() throws Exception {
+
     }
 }

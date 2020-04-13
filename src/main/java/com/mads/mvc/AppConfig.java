@@ -2,10 +2,11 @@ package com.mads.mvc;
 
 import com.mads.interceptor.UserInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ImportAwareTests;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Component
@@ -25,8 +26,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class AppConfig  extends WebMvcConfigurerAdapter {
 
-    @Autowired
-    private UserInterceptor userInterceptor;
+//    @Autowired
+//    private UserInterceptor userInterceptor;
 
     /****
      * 将我们的自定义拦截器 加入到 Spring,如果有多个拦截器。那就在调用 addInterceptor（）加就可以了
@@ -34,9 +35,15 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(userInterceptor)
-                .addPathPatterns("")//需要拦截的路径
-                .excludePathPatterns("");//不需要拦截的路径
+//        registry.addInterceptor(userInterceptor)
+//                .addPathPatterns("")//需要拦截的路径
+//                .excludePathPatterns("");//不需要拦截的路径
+//        registry.addInterceptor(userInterceptor).addPathPatterns("/user/**");
 
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**");
     }
 }

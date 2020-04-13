@@ -12,13 +12,6 @@ public class Lannister {
 
     private String sex = "男";
 
-    @Override
-    public String toString() {
-        return "Lannister{" +
-                "name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
-                '}';
-    }
 
     public String getName() {
         return name;
