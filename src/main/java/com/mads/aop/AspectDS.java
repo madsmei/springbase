@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 /*
- *要优先于事务执行
+ *本切面是 动态数据源的切面
  * */
 @Order(-1)
 public class AspectDS {
