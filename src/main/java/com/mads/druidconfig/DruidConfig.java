@@ -31,8 +31,8 @@ public class DruidConfig {
     private String password;
 
     /*
-    * <bean >
-    * */
+     * <bean >
+     * */
     public DataSource getDs1() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDriverClassName(driverClassName);
@@ -92,11 +92,11 @@ public class DruidConfig {
     @Bean
     public DataSource dynamicDataSource() {
 
-        Map<Object,Object> targetDataSources = new HashMap<>();
+        Map<Object, Object> targetDataSources = new HashMap<>();
         DataSource ds1 = getDs1();
         DataSource ds2 = getDs2();
-        targetDataSources.put("ds1",ds1);
-        targetDataSources.put("ds2",ds2);
+        targetDataSources.put("ds1", ds1);
+        targetDataSources.put("ds2", ds2);
 
         //将两个数据源放入到 多数据源的类中，让Spring帮我们保管
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
@@ -104,7 +104,6 @@ public class DruidConfig {
         dynamicDataSource.setDefaultTargetDataSource(ds1);
         return dynamicDataSource;
     }
-
 
 
     /**

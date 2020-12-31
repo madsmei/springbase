@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 
 /**
  * @Description: 测试 类在实例化之前调用。
- *   这个类使用了@component注解，就是告诉spring我是一个bean，快来初始化我，这个里面我们还可以有我们自己的业务方法
+ * 这个类使用了@component注解，就是告诉spring我是一个bean，快来初始化我，这个里面我们还可以有我们自己的业务方法
  * 测试类请看 {@link com.mads.springbaseapplicationTests}
  * @Date 2020/3/27
  * @Version V1.0
@@ -19,9 +19,10 @@ public class InitClassAfter implements InitializingBean, DisposableBean {
 
     private int a = 1;
     private int b = 1;
+
     //伪代码    我们自己的业务逻辑
     public void addNum() {
-        System.out.println("计算结果："+(a+b));
+        System.out.println("计算结果：" + (a + b));
     }
 
     /*

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @Description: controller的全局异常拦截,只拦截.mads包下的，
+ * @Description: controller的全局异常拦截, 只拦截.mads包下的，
  * 为什么要有全局拦截呢，就是为了统一处理异常信息，让用户更友好，总不能让用户看到 500，这类的异常
- *
+ * <p>
  * 这里我们可以只写一个，只要是异常就返回一个固定的提示信息，用户才不管你是下标越界还是空指针。。。
  * @Date 2020/3/28
  * @Version V1.0
@@ -25,7 +25,7 @@ public class ExceptionHandlerControllerAdvice {
      */
     @ExceptionHandler({ArrayIndexOutOfBoundsException.class})
     public @ResponseBody
-    String handlerArrayIndexOutOfBoundsException(Exception e){
+    String handlerArrayIndexOutOfBoundsException(Exception e) {
         System.out.println("===========ExceptionHandlerControllerAdvice-->" + e.getMessage());
         return "{'errormsg':'handlerArrayIndexOutOfBoundsException'}";
     }

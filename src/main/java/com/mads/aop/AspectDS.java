@@ -40,7 +40,7 @@ public class AspectDS {
         String value = targetSource.value();
 
         //如果 设置了数据源就用设置的，没设置就用默认的
-        if(value != null && !"".equals(value)) {
+        if (value != null && !"".equals(value)) {
             DynamicDataSourceHolder.getLocal().set(value);
         } else {
             DynamicDataSourceHolder.getLocal().set("ds1");

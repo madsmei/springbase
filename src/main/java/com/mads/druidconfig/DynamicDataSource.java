@@ -9,9 +9,9 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
     /*
-    * 返回一个字符串，这个字符串就是跟数据源对象绑定的字符串
-    * 这个方法的操作由Spring完成调用，、
-    * */
+     * 返回一个字符串，这个字符串就是跟数据源对象绑定的字符串
+     * 这个方法的操作由Spring完成调用，、
+     * */
     @Override
     protected Object determineCurrentLookupKey() {
 

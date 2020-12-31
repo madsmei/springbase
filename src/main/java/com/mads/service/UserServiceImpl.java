@@ -31,16 +31,16 @@ public class UserServiceImpl implements UserService {
      * @Cacheable缓存注解对应的配置请看 {@link com.mads.cache.CacheBean}
      *
      * 注意：@CachePut注解是没有上面1步骤的，每次都会查数据库然后加到缓存
-    * */
+     * */
 //    @CachePut
-    @Cacheable(cacheNames = "mapCache",key = "'user:' + #areaCode")
+    @Cacheable(cacheNames = "mapCache", key = "'user:' + #areaCode")
     @TargetSource("ds2")
     @Transactional
     @Override
     public String queryUser(String areaCode) {
         System.out.println("=========UserServiceImpl.queryUser=====");
         Map map = new HashMap<>();
-        map.put("areaCode",areaCode);
+        map.put("areaCode", areaCode);
         List<ConsultConfigArea> areas = commonMapper.queryAreaByAreaCode(map);
         return JSONObject.toJSONString(areas);
     }

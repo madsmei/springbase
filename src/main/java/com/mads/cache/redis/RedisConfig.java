@@ -36,7 +36,7 @@ public class RedisConfig {
     private Integer port;
 
     @Bean
-    public JedisPoolConfig jedisPoolConfig(){
+    public JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
         jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
@@ -46,14 +46,14 @@ public class RedisConfig {
 
 
     @Bean
-    public RedisTemplate<String, String> redisTemplate(JedisConnectionFactory jedisConnectionFactory){
+    public RedisTemplate<String, String> redisTemplate(JedisConnectionFactory jedisConnectionFactory) {
         RedisTemplate template = new RedisTemplate();
         template.setConnectionFactory(jedisConnectionFactory);
         return template;
     }
 
-    private void setSerializer(StringRedisTemplate template){
-        @SuppressWarnings({ "rawtypes", "unchecked" })
+    private void setSerializer(StringRedisTemplate template) {
+        @SuppressWarnings({"rawtypes", "unchecked"})
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
@@ -63,7 +63,7 @@ public class RedisConfig {
     }
 
     @Bean
-    public JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig jedisPoolConfig){
+    public JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig jedisPoolConfig) {
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setHostName(hostName);
         jedisConnectionFactory.setPort(port);

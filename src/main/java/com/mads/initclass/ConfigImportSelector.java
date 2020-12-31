@@ -7,10 +7,10 @@ import java.util.Map;
 
 /**
  * @Description: ImportSelector接口是至spring中导入外部配置的核心接口
- *
- *其主要作用是收集需要导入的配置类，如果该接口的实现类同时实现EnvironmentAware， BeanFactoryAware ，
+ * <p>
+ * 其主要作用是收集需要导入的配置类，如果该接口的实现类同时实现EnvironmentAware， BeanFactoryAware ，
  * BeanClassLoaderAware或者ResourceLoaderAware，那么在调用其selectImports方法之前先调用上述接口中对应的方法
- *
+ * <p>
  * 1.ImportSelector的导入实现是通过BeanFactoryPostProcessor接口的子接口BeanDefinitionRegistryPostProcessor来实现的。
  * 2.ImportSelector接口的处理是伴随着@Configuration注解的处理一起处理的。
  * 3.ImportSelector接口可以实现自定义条件选择性导入classes。

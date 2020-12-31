@@ -11,8 +11,8 @@ import org.springframework.stereotype.Controller;
  *
  * 扫描  controller层的
  */
-@ComponentScan(value = "com.mads",includeFilters = {
-        @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = {Controller.class})
+@ComponentScan(value = "com.mads", includeFilters = {
+        @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class})
 })
 public class MvcContainer {
 }

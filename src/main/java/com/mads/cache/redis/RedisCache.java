@@ -61,6 +61,7 @@ public class RedisCache implements Cache {
             }
         });
     }
+
     /***
      * 核心方法
      * @param key
@@ -91,6 +92,7 @@ public class RedisCache implements Cache {
     public <T> T get(Object key, Class<T> type) {
         return null;
     }
+
     /***
      * 核心方法  设置缓存
      * @param key

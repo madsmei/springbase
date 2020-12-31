@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 /*****
  * 测试一下 我们的AOP是不是可以切换数据源
  */
@@ -33,9 +35,11 @@ public class UserController {
      * @return
      */
     @RequestMapping("/exceptionTest")
-    public @ResponseBody String exceptionTest() {
+    public @ResponseBody
+    String exceptionTest() {
         String aa = null;
         aa.substring(0);
+
         return aa;
     }
 }

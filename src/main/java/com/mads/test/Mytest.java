@@ -15,7 +15,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
  * @Description: 使用AnnotationConfigApplicationContext可以实现基于Java的配置类（包括各种注解）加载Spring的应用上下文
- *  * 调用里面的 refresh（）方法 启动Spring容器，spring一切的启点，，
+ * * 调用里面的 refresh（）方法 启动Spring容器，spring一切的启点，，
  * @Date 2020/4/5
  * @Version V1.0
  * @Author Mads
@@ -32,12 +32,12 @@ public class Mytest {
         /****
          *下面至于为什么要加&，加与不加的区别请看 {@link com.mads.initclass.FactoryBeanClass}
          */
-        System.out.println("-1-->"+applicationContext.getBean("factoryBeanClass"));
-        System.out.println("-1-->"+applicationContext.getBean("&factoryBeanClass"));
-        System.out.println("-2-->"+applicationContext.getBean(InitClassAfter.class));
+        System.out.println("-1-->" + applicationContext.getBean("factoryBeanClass"));
+        System.out.println("-1-->" + applicationContext.getBean("&factoryBeanClass"));
+        System.out.println("-2-->" + applicationContext.getBean(InitClassAfter.class));
 
-        System.out.println("-3-->"+applicationContext.getBean(Lannister.class).toString());
-        System.out.println("-4-->"+applicationContext.getBean(Account.class));
+        System.out.println("-3-->" + applicationContext.getBean(Lannister.class).toString());
+        System.out.println("-4-->" + applicationContext.getBean(Account.class));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class Mytest {
 
         for (int i = 0; i < 10; i++) {
             int finalI = i;
-            new Thread(()->{
+            new Thread(() -> {
 
                 if (finalI % 2 == 0) {
                     System.out.println(Thread.currentThread().getName() + "-->" + applicationContext.getBean("scopeBean"));
@@ -84,7 +84,7 @@ public class Mytest {
     }
 
     @Test
-    public void test5(){
+    public void test5() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.mads");
 
     }

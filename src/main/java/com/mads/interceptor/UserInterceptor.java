@@ -21,10 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 public class UserInterceptor implements HandlerInterceptor {
 
     /*
-    * 前置拦截器，是优先执行的（看门狗）
-    * 用来控制  要不要把请求往下执行，
-    *
-    * */
+     * 前置拦截器，是优先执行的（看门狗）
+     * 用来控制  要不要把请求往下执行，
+     *
+     * */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("===========UserInterceptor.preHandle==========");

@@ -6,16 +6,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.support.TransactionTemplate;
 
 /**
- * @Description:
- *  注意：
- *      当根据factoryBeanClass该类时，spring会调用getObject()方法返回一个我们事先写好的类的对象实例。有点像是代理的意思，
- *      因此context.getBean("factoryBeanClass") 获取的是student对象，并不是FactoryBeanClass本身，
- *      如果想要获取FactoryBeanClass本身可以这样context.getBean("@factoryBeanClass")
- *
+ * @Description: 注意：
+ * 当根据factoryBeanClass该类时，spring会调用getObject()方法返回一个我们事先写好的类的对象实例。有点像是代理的意思，
+ * 因此context.getBean("factoryBeanClass") 获取的是student对象，并不是FactoryBeanClass本身，
+ * 如果想要获取FactoryBeanClass本身可以这样context.getBean("@factoryBeanClass")
+ * <p>
  * 场景：
- *      1.使用代理生成对象实例
- *
- *  场景：
+ * 1.使用代理生成对象实例
+ * <p>
+ * 场景：
  * @Date 2020/3/27
  * @Version V1.0
  * @Author Mads
