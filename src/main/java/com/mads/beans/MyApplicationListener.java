@@ -1,4 +1,4 @@
-package com.mads.initclass;
+package com.mads.beans;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

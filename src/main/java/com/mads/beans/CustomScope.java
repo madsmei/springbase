@@ -1,39 +1,32 @@
-package com.mads.initclass;
+package com.mads.beans;
 
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-
-import java.lang.annotation.Annotation;
 
 /**
- * @Description: 一般我们加上@Component 注解，就是把类交给spring帮我们管理，如果我们想自己管理怎么办呢
- * Scope 接口就是把这个控制权交给我们自己
+ *  一般我们加上@Component 注解，就是把类交给spring帮我们管理，如果我们想自己管理怎么办呢
+ * Scope 接口就是把这个控制权交给我们自己，不过这个接口的使用场景并不是很多。scope管理的bean 是不会进入 Spring的一级缓存的
  * <p>
  * 步骤：
  * 1.继承接口
  * 2.实现必要方法
- * 3.注册（告诉spring一声，这个类我照了，你忙别的去把） {@link BeanDefinitionDemo#postProcessBeanFactory}
+ * 3.将自己的scope注册到spring,这样才能被调用 {@link ServiceBeanDefinitionRegistry#postProcessBeanFactory}
+ * 4.在需要自己管理的bean上加上@Score("customScope"),
  * <p>
  * 注意：
  * 1.Scope管理是 调用toString()方法，如果你重写了，可能会造成 Scope管理出现神奇的问题,哈哈哈
  * <p>
  * 场景：
  * 1.例如SpringCloud中的Springbus消息总线，吧远程的配置刷新到本地
- * @Date 2020/3/27
- * @Version V1.0
- * @Author Mads
  **/
 public class CustomScope implements Scope {
 
+    //这里使用ThreadLocal 是为了每个线程拿到的都是自己的。也可以换成其他容器
     private ThreadLocal local = new ThreadLocal();
 
 
     /******
      * 这个就是我们管理 bean 的方式（步骤），使用到ThreadLocal 是在多线程环境下 每个人拿到的对象都是自己的
-     * @param s
-     * @param objectFactory
-     * @return
      */
     @Override
     public Object get(String s, ObjectFactory<?> objectFactory) {

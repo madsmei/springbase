@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /*****
  * 兰尼斯特家族
  */
-@Component
+//@Component
 public class Lannister {
 
     private String name = "泰温";

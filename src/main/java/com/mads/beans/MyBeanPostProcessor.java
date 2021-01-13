@@ -1,4 +1,4 @@
-package com.mads.initclass;
+package com.mads.beans;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -16,6 +16,9 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * 因为后置处理器从Spring IoC容器中取出bean实例对象没有再次放回IoC容器中
  * <p>
  * 当类实例化后，都要经过这个接口的的各种子类去解析各种各样的注解并完成IOC注入完成初始化，
+ *
+ * 这个接口 是装饰器设计模式的应用
+ *
  * @Date 2020/4/3
  * @Version V1.0
  * @Author Mads

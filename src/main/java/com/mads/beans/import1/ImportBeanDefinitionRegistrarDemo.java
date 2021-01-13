@@ -1,4 +1,4 @@
-package com.mads.initclass;
+package com.mads.beans.import1;
 
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
@@ -14,6 +14,8 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 public class ImportBeanDefinitionRegistrarDemo implements ImportBeanDefinitionRegistrar {
     /**
+     * 这个方法是在收集完成以后调用的
+     *
      * 这个方法可以拿到@Import的这个class的Annotation Metadata，以及此时的BeanDefinitionRegistry对象，通过BeanDefinitionRegistry
      * 就可以拿到目前所有注册的BeanDefinition，然后可以对这些BeanDefinition进行额外的修改或增强。
     **/

@@ -1,4 +1,4 @@
-package com.mads.initclass;
+package com.mads.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

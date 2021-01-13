@@ -1,4 +1,4 @@
-package com.mads.initclass;
+package com.mads.beans;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;

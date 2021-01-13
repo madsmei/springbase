@@ -17,11 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*****
- * @Description: 开启 缓存功能。
+ *  开启 缓存功能。
  * 关于 缓存注解的测试用请看  {@link com.mads.service.UserServiceImpl#queryUser(String)} 中 @Cacheable注解
- * @Date 2020/3/29
- * @Version V1.0
- * @Author Mads
  **/
 @Component
 @EnableCaching
